@@ -2,4 +2,4 @@
 s
 ww
 ss
-s
+s\
