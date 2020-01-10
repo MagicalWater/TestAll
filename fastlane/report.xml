@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="fastlane.lanes">
+    
+    
+    
+      
+      <testcase classname="fastlane.lanes" name="0: merge_env" time="0.009339">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="1: Switch to ios mx_sign lane" time="0.001792">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="2: Switch to ios get_account_info lane" time="0.00151">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="3: automatic_code_signing" time="0.068173">
+        
+      </testcase>
+    
+  </testsuite>
+</testsuites>

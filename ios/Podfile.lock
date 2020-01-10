@@ -1,0 +1,97 @@
+PODS:
+  - app_updater (0.0.1):
+    - Flutter
+  - Flutter (1.0.0)
+  - flutter_local_notifications (0.0.1):
+    - Flutter
+  - fluttertoast (0.0.2):
+    - Flutter
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - media_app_core (0.0.1):
+    - Flutter
+  - mx_core (0.0.1):
+    - Flutter
+  - mx_json (0.0.1):
+    - Flutter
+  - package_info (0.0.1):
+    - Flutter
+  - path_provider (0.0.1):
+    - Flutter
+  - permission_handler (3.3.0):
+    - Flutter
+  - shared_preferences (0.0.1):
+    - Flutter
+  - sqflite (0.0.1):
+    - Flutter
+    - FMDB (~> 2.7.2)
+  - url_launcher (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - app_updater (from `.symlinks/plugins/app_updater/ios`)
+  - Flutter (from `.symlinks/flutter/ios`)
+  - flutter_local_notifications (from `.symlinks/plugins/flutter_local_notifications/ios`)
+  - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
+  - media_app_core (from `.symlinks/plugins/media_app_core/ios`)
+  - mx_core (from `.symlinks/plugins/mx_core/ios`)
+  - mx_json (from `.symlinks/plugins/mx_json/ios`)
+  - package_info (from `.symlinks/plugins/package_info/ios`)
+  - path_provider (from `.symlinks/plugins/path_provider/ios`)
+  - permission_handler (from `.symlinks/plugins/permission_handler/ios`)
+  - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
+  - sqflite (from `.symlinks/plugins/sqflite/ios`)
+  - url_launcher (from `.symlinks/plugins/url_launcher/ios`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - FMDB
+
+EXTERNAL SOURCES:
+  app_updater:
+    :path: ".symlinks/plugins/app_updater/ios"
+  Flutter:
+    :path: ".symlinks/flutter/ios"
+  flutter_local_notifications:
+    :path: ".symlinks/plugins/flutter_local_notifications/ios"
+  fluttertoast:
+    :path: ".symlinks/plugins/fluttertoast/ios"
+  media_app_core:
+    :path: ".symlinks/plugins/media_app_core/ios"
+  mx_core:
+    :path: ".symlinks/plugins/mx_core/ios"
+  mx_json:
+    :path: ".symlinks/plugins/mx_json/ios"
+  package_info:
+    :path: ".symlinks/plugins/package_info/ios"
+  path_provider:
+    :path: ".symlinks/plugins/path_provider/ios"
+  permission_handler:
+    :path: ".symlinks/plugins/permission_handler/ios"
+  shared_preferences:
+    :path: ".symlinks/plugins/shared_preferences/ios"
+  sqflite:
+    :path: ".symlinks/plugins/sqflite/ios"
+  url_launcher:
+    :path: ".symlinks/plugins/url_launcher/ios"
+
+SPEC CHECKSUMS:
+  app_updater: 895ba6066226e92296ca9b2e8eb597029abd307b
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  flutter_local_notifications: 9e4738ce2471c5af910d961a6b7eadcf57c50186
+  fluttertoast: b644586ef3b16f67fae9a1f8754cef6b2d6b634b
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  media_app_core: 15e6afa87a6a83b510cacd210dde16c1939f396d
+  mx_core: 9062140d90c36048211f52e43fbe1bbd79955cd6
+  mx_json: 16a866a69c92aa2394823cd6cd74eb996930d2e8
+  package_info: 48b108e75b8802c2d5e126f208ef540561c98aef
+  path_provider: f96fff6166a8867510d2c25fdcc346327cc4b259
+  permission_handler: 67637977b227d62d46bfbf524f335f8568de5a73
+  shared_preferences: 430726339841afefe5142b9c1f50cb6bd7793e01
+  sqflite: 4001a31ff81d210346b500c55b17f4d6c7589dd0
+  url_launcher: a1c0cc845906122c4784c542523d8cacbded5626
+
+PODFILE CHECKSUM: b6a0a141693093b304368d08511b46cf3d1d0ac5
+
+COCOAPODS: 1.8.4

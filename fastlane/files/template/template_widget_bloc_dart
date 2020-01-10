@@ -1,0 +1,13 @@
+import 'package:mx_core/mx_core.dart';
+import 'package:rxdart/rxdart.dart';
+import 'package:${project}/router/route.dart';
+
+class ${upper_camel}Bloc implements BlocBase {
+  @override
+  final RouteOption option;
+
+  ${upper_camel}Bloc(this.option);
+
+  @override
+  void dispose() {}
+}

@@ -1,0 +1,171 @@
+import 'package:flutter/material.dart';
+import 'package:mx_core/mx_core.dart';
+import 'package:${project}/router/route.dart';
+
+MixinRouteBuilder _defaultRouteBuilder;
+
+/// 範例, 上層使用此方式創建對應頁面
+class RouteMixin implements RouteMixinBase {
+  static void setDefaultRoute<T>(MixinRouteBuilder<T> builder) {
+    _defaultRouteBuilder = builder;
+  }
+
+  Widget _getPage(RouteData data) {
+    final child = AppRoute.getPage(data.route, data.widgetQuery);
+    switch (data.route) {
+      default:
+        print("找無對應的 page, ${data.route}");
+        return null;
+    }
+  }
+
+  Widget _getWidget(RouteData data) {
+    final child = AppRoute.getWidget(data.route, data.widgetQuery);
+    switch (data.route) {
+      default:
+        print("找無對應的 widget, ${data.route}");
+        return null;
+    }
+  }
+
+  /// 返回的同時再 push
+  /// [route] - 將要 push 的頁面
+  /// [popUtil] - pop 直到 返回false
+  /// [result] - 要返回給前頁面的結果, 當 [popUtil] 為空時有效
+  @override
+  Future<T> popAndPushPage<T>(
+    String route,
+    BuildContext context, {
+    Map<String, dynamic> pageQuery,
+    Map<String, dynamic> blocQuery,
+    bool Function(String route) popUntil,
+    Object result,
+  }) {
+    print("頁面返回並跳頁, 首先頁面返回");
+    pop(context, popUntil: popUntil, result: result);
+    return pushPage(route, context, pageQuery: pageQuery, blocQuery: blocQuery);
+  }
+
+  /// 返回 page
+  /// [result] - 要返回給前頁面的結果, 當 [popUtil] 為空時有效
+  @override
+  bool pop(
+    BuildContext context, {
+    bool Function(String route) popUntil,
+    Object result,
+  }) {
+    print("頁面返回");
+    var navigator = Navigator.of(context);
+    if (popUntil != null) {
+      // 需要返回多個頁面
+      navigator.popUntil((rt) => popUntil(rt.settings.name));
+      return true;
+    } else {
+      // 返回單個頁面
+      return navigator.pop(result);
+    }
+  }
+
+  /// 發起頁面跳轉
+  /// [replaceCurrent] - 替換掉當前頁面, 即無法再返回當前頁面
+  /// [removeUtil] - 刪除舊頁面直到 返回false
+  /// [builder] - 自定義構建 PageRoute
+  @override
+  Future<T> pushPage<T>(
+    String route,
+    BuildContext context, {
+    Map<String, dynamic> pageQuery,
+    Map<String, dynamic> blocQuery,
+    bool replaceCurrent = false,
+    bool Function(String route) removeUntil,
+    MixinRouteBuilder<T> builder,
+  }) async {
+    print("發起跳轉: $route");
+
+    var navigator = Navigator.of(context);
+
+    var pageRoute = _getRoute<T>(
+      route: route,
+      context: context,
+      pageQuery: pageQuery,
+      blocQuery: blocQuery,
+      builder: builder,
+    );
+
+    if (removeUntil != null) {
+      return await navigator.pushAndRemoveUntil(pageRoute, (rt) {
+        return removeUntil(rt.settings.name);
+      });
+    } else if (replaceCurrent) {
+      return await navigator.pushReplacement(pageRoute);
+    } else {
+      return navigator.push(pageRoute);
+    }
+  }
+
+  PageRoute<T> _getRoute<T>({
+    @required String route,
+    @required BuildContext context,
+    Map<String, dynamic> pageQuery,
+    Map<String, dynamic> blocQuery,
+    MixinRouteBuilder<T> builder,
+  }) {
+    var page = _getPage(
+      RouteData(
+        route: route,
+        widgetQuery: pageQuery,
+        blocQuery: blocQuery,
+      ),
+    );
+
+    var routeBuilder = builder ?? _defaultRouteBuilder;
+    PageRoute<T> pageRoute;
+    if (routeBuilder == null) {
+      pageRoute = MaterialPageRoute(
+        builder: (_) => page,
+        settings: RouteSettings(name: route),
+      );
+    } else {
+      pageRoute = routeBuilder(context, page, route);
+      if (pageRoute == null) {
+        print("RouteMixin builder 返回為空, 使用默認 MaterialPageRoute");
+        pageRoute = MaterialPageRoute(
+          builder: (_) => page,
+          settings: RouteSettings(name: route),
+        );
+      }
+    }
+    return pageRoute;
+  }
+
+  /// 單純取得頁面
+  @override
+  Widget getPage({
+    @required String route,
+    Map<String, dynamic> pageQuery,
+    Map<String, dynamic> blocQuery,
+  }) {
+    var data = RouteData(
+      route: route,
+      widgetQuery: pageQuery,
+      blocQuery: blocQuery,
+    );
+    return _getPage(data);
+  }
+
+  /// 單純取得元件
+  @override
+  Widget getWidget({
+    String route,
+    Map<String, dynamic> widgetQuery,
+    Map<String, dynamic> blocQuery,
+  }) {
+    var data = RouteData(
+      route: route,
+      widgetQuery: widgetQuery,
+      blocQuery: blocQuery,
+    );
+    return _getWidget(data);
+  }
+}
+

@@ -1,0 +1,42 @@
+name: media_app
+description: A new Flutter application.
+version: "0.0.3+3"
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: "^0.1.2"
+  flutter_localizations:
+    sdk: flutter
+  json_annotation: "^3.0.0"
+  annotation_route: "^0.0.2"
+  xson_annotation: "^1.0.0"
+  type_translator: "^1.0.2+1"
+  mx_core:
+    git:
+      url: "git@github.com:3rdpay/AppCore-Flutter.git"
+      path: mx_core
+  media_app_core:
+    git:
+      url: "git@github.com:i2xc/Media-APP-Core.git"
+      ref: dev
+  xview:
+    git:
+      url: "git://github.com/gta371667/duck_flutter.git"
+      path: xview
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mx_json:
+    git:
+      url: "git@github.com:3rdpay/AppCore-Flutter.git"
+      path: mx_json
+  json_serializable: "^3.2.2"
+  build_runner: "^1.6.8"
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/jsons/
+    - assets/messaging_handler/

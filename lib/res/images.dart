@@ -1,0 +1,63 @@
+class Images {
+  static const icAdultVideo = "assets/images/ic_adult_video.png";
+  static const icCartoon = "assets/images/ic_cartoon.png";
+  static const icClose = "assets/images/ic_close.png";
+  static const icDrama = "assets/images/ic_drama.png";
+  static const icFunnel = "assets/images/ic_funnel.png";
+  static const icHome = "assets/images/ic_home.png";
+  static const icHomeAdultVideo = "assets/images/ic_home_adult_video.png";
+  static const icHomeBanner = "assets/images/ic_home_banner.png";
+  static const icHomeBanner2 = "assets/images/ic_home_banner2.png";
+  static const icHomeBanner3 = "assets/images/ic_home_banner3.png";
+  static const icHomeBanner4 = "assets/images/ic_home_banner4.png";
+  static const icHomeBanner5 = "assets/images/ic_home_banner5.png";
+  static const icHomeCarton = "assets/images/ic_home_carton.png";
+  static const icHomeDrama = "assets/images/ic_home_drama.png";
+  static const icHomeMovie = "assets/images/ic_home_movie.png";
+  static const icHomeVarietyShow = "assets/images/ic_home_variety_show.png";
+  static const icIcon = "assets/images/ic_icon.png";
+  static const icLike = "assets/images/ic_like.png";
+  static const icMenu = "assets/images/ic_menu.png";
+  static const icMovie = "assets/images/ic_movie.png";
+  static const icRecordClock = "assets/images/ic_record_clock.png";
+  static const icSearch = "assets/images/ic_search.png";
+  static const icTitle = "assets/images/ic_title.png";
+  static const icUser = "assets/images/ic_user.png";
+  static const icUserHead = "assets/images/ic_user_head.png";
+  static const icVarietyShow = "assets/images/ic_variety_show.png";
+  static const icWelcome = "assets/images/ic_welcome.png";
+  static const icWelcome2 = "assets/images/ic_welcome2.png";
+  Images._internal();
+}
+
+class MediaAppImages {
+  static const icAdultVideo = "packages/media_app/assets/images/ic_adult_video.png";
+  static const icCartoon = "packages/media_app/assets/images/ic_cartoon.png";
+  static const icClose = "packages/media_app/assets/images/ic_close.png";
+  static const icDrama = "packages/media_app/assets/images/ic_drama.png";
+  static const icFunnel = "packages/media_app/assets/images/ic_funnel.png";
+  static const icHome = "packages/media_app/assets/images/ic_home.png";
+  static const icHomeAdultVideo = "packages/media_app/assets/images/ic_home_adult_video.png";
+  static const icHomeBanner = "packages/media_app/assets/images/ic_home_banner.png";
+  static const icHomeBanner2 = "packages/media_app/assets/images/ic_home_banner2.png";
+  static const icHomeBanner3 = "packages/media_app/assets/images/ic_home_banner3.png";
+  static const icHomeBanner4 = "packages/media_app/assets/images/ic_home_banner4.png";
+  static const icHomeBanner5 = "packages/media_app/assets/images/ic_home_banner5.png";
+  static const icHomeCarton = "packages/media_app/assets/images/ic_home_carton.png";
+  static const icHomeDrama = "packages/media_app/assets/images/ic_home_drama.png";
+  static const icHomeMovie = "packages/media_app/assets/images/ic_home_movie.png";
+  static const icHomeVarietyShow = "packages/media_app/assets/images/ic_home_variety_show.png";
+  static const icIcon = "packages/media_app/assets/images/ic_icon.png";
+  static const icLike = "packages/media_app/assets/images/ic_like.png";
+  static const icMenu = "packages/media_app/assets/images/ic_menu.png";
+  static const icMovie = "packages/media_app/assets/images/ic_movie.png";
+  static const icRecordClock = "packages/media_app/assets/images/ic_record_clock.png";
+  static const icSearch = "packages/media_app/assets/images/ic_search.png";
+  static const icTitle = "packages/media_app/assets/images/ic_title.png";
+  static const icUser = "packages/media_app/assets/images/ic_user.png";
+  static const icUserHead = "packages/media_app/assets/images/ic_user_head.png";
+  static const icVarietyShow = "packages/media_app/assets/images/ic_variety_show.png";
+  static const icWelcome = "packages/media_app/assets/images/ic_welcome.png";
+  static const icWelcome2 = "packages/media_app/assets/images/ic_welcome2.png";
+  MediaAppImages._internal();
+}

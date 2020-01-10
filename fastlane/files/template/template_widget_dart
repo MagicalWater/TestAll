@@ -1,0 +1,31 @@
+import 'package:flutter/material.dart';
+import 'package:annotation_route/route.dart';
+import 'package:mx_core/mx_core.dart';
+import 'package:${project}/router/route.dart';
+import 'package:${project}/bloc/widget/${lower_line}_bloc.dart';
+import 'package:${project}/bloc/application_bloc.dart';
+
+@ARoute(url: Widgets.${ori})
+class ${upper_camel}Widget extends StatefulWidget {
+  final RouteOption option;
+
+  ${upper_camel}Widget(this.option): super();
+
+  @override
+  _${upper_camel}WidgetState createState() => _${upper_camel}WidgetState();
+}
+
+class _${upper_camel}WidgetState extends State<${upper_camel}Widget> {
+  ${upper_camel}Bloc bloc;
+
+  @override
+  void initState() {
+    bloc = BlocProvider.of<${upper_camel}Bloc>(context);
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}

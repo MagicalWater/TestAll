@@ -1,0 +1,11 @@
+{
+  "message": "System Error [-1]",
+  "routes": {
+    "$80000": {
+      "remark": "",
+      "routes": {
+        "$1000": ""
+      }
+    }
+  }
+}

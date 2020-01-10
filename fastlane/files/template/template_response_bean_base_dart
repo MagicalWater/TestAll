@@ -1,0 +1,28 @@
+import 'package:json_annotation/json_annotation.dart';
+
+import 'response_code_map.dart';
+
+part 'response_bean_base.g.dart';
+
+@JsonSerializable(nullable: false)
+class ResponseBeanBase {
+  var code;
+
+  factory ResponseBeanBase.fromJson(Map<String, dynamic> json) =>
+      _$ResponseBeanBaseFromJson(json);
+
+  ResponseBeanBase({this.code});
+
+  Map<String, dynamic> toJson() => _$ResponseBeanBaseToJson(this);
+
+  /// 檢查 response 是否成功
+  bool isCodeSuccess() {
+    if (code is int && (code == 200 || code == 201)) {
+      return true;
+    } else {
+      var message = ResponseCodeMap.getErrorDesc(code);
+      print(message);
+      return false;
+    }
+  }
+}

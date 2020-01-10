@@ -1,0 +1,139 @@
+
+class ResponseCodeMap {
+
+  ResponseCodeMap._internal();
+
+  static String getErrorDesc(dynamic code) {
+    if (code is List<dynamic>) {
+      List<String> errMaps = code.map((value) {
+        if (value is int) {
+          return getErrorMap(value);
+        } else {
+          return "$value";
+        }
+      });
+      return errMaps.join("; ");
+    } else if (code is int) {
+      return getErrorMap(code);
+    } else {
+      return code.toString();
+    }
+  }
+
+  static String getErrorMap(int code) {
+    List<String> des = [];
+    if (generalMap.containsKey(code)) {
+      des.add("(code)[通用]($code) - ${generalMap[code]}");
+    }
+    if (accountMap.containsKey(code)) {
+      des.add("(code)[帳號]($code) - ${generalMap[code]}");
+    }
+    if (guestBookMap.containsKey(code)) {
+      des.add("(code)[留言板]($code) - ${generalMap[code]}");
+    }
+    if (webLinkMap.containsKey(code)) {
+      des.add("(code)[連結]($code) - ${generalMap[code]}");
+    }
+    if (financeCommentMap.containsKey(code)) {
+      des.add("(code)[新聞評論]($code) - ${generalMap[code]}");
+    }
+    return des.join("; ");
+  }
+
+  static final Map<int, String> generalMap = {
+    -4: "更新失敗",
+    -3: "新增失敗",
+    -2: "找不到資料",
+    -1: "毀滅性錯誤",
+    0: "正常運作",
+    200: "正常運作",
+    401: "尚未認證",
+    500: "系統錯誤",
+    1000: "id必填",
+    1001: "id必需是int",
+    1002: "account必填",
+    1003: "password必填",
+    1004: "old password 必填",
+    1005: "new password 必填",
+    1006: "暫無",
+    1007: "page is int",
+    1008: "perpage is int",
+    1009: "account 必須是數字與英文字母",
+    1010: "status 必填",
+    1011: "password確認的值不一樣",
+    1012: "role必填",
+    1013: "display_name必填",
+    1014: "perpage必須介於1~100之間",
+    1015: "enable 必須是 Y or N",
+    1016: "nodes 必須是陣列",
+    1017: "display_name長度必須介於4~32",
+    1018: "image 必填",
+    1019: "image 檔案類型錯誤",
+    1020: "page必須介於1~100之間",
+  };
+
+  static final Map<int, String> accountMap = {
+    10000: "查無該帳號",
+    10001: "帳號已存在",
+    10002: "新增帳號失敗",
+    10003: "密碼驗證失敗",
+    10004: "刪除帳號失敗",
+    10005: "帳號無任何角色設定",
+    10006: "非法操作",
+    10007: "圖片上傳失敗",
+  };
+
+  static final Map<int, String> guestBookMap = {
+    80000: "search 必須string型態",
+    80001: "title 必填",
+    80002: "title 必須string型態",
+    80003: "content 必填",
+    80004: "content 必須string型態",
+    80005: "id 必須array型態",
+    80006: "id 數量需介於1-100",
+    80007: "非作者,故無法更新內容",
+    80008: "非作者,故無法刪除內容",
+    80009: "message 必填",
+    80010: "message 必須string型態",
+    80011: "account_id 必填",
+    80012: "account_id 必須integer型態",
+  };
+
+  static final Map<int, String> webLinkMap = {
+    70001: "name必填",
+    70002: "name必需為字串",
+    70003: "status必填",
+    70004: "status必需為字串",
+    70005: "status型態不支援",
+    70006: "id必需為array",
+    70007: "category_id必填",
+    70008: "category_id必需為int",
+    70009: "url必填",
+    70010: "url必需為字串",
+    70011: "不是一個url",
+    70012: "app id 必填",
+    70013: "app id 必需為array",
+    70014: "app id 內的值必需為int",
+    70015: "upload file 必填",
+    70016: "upload file 不是圖片",
+    70017: "image id必需為int",
+    70018: "找不到圖片",
+    70019: "找不到分類",
+    70020: "id最多傳送100筆",
+    70021: "分類下有網站連結資訊",
+    70022: "app id不存在",
+  };
+
+  static final Map<int, String> financeCommentMap = {
+    80001 : "theme_id必填",
+    80002: "theme_id為string",
+    80003: "theme_id最大長度為255",
+    80004: "message必填",
+    80005: "message為string",
+    80006: "reaction_kind為int",
+    80007: "reaction_kind不支援",
+    80008: "comment_id必填",
+    80009: "comment_id為int",
+    800010: "comment_id不存在",
+  };
+}

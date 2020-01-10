@@ -1,0 +1,12 @@
+import 'package:rxdart/rxdart.dart';
+import 'package:mx_core/mx_core.dart';
+
+class ${upper_camel}Bloc implements BlocBase {
+  @override
+  BlocOption option;
+
+  ${upper_camel}Bloc(this.option);
+
+  @override
+  void dispose() {}
+}

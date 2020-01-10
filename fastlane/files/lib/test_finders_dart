@@ -1,0 +1,38 @@
+import 'package:flutter/foundation.dart';
+
+class TestFinders {
+  TestFinders._();
+
+  /// 首頁按鈕
+  static const ValueKey<String> homeButton = ValueKey("homeButton");
+
+  /// 新聞按鈕
+  static const ValueKey<String> newsButton = ValueKey("newsButton");
+
+  /// 行情按鈕
+  static const ValueKey<String> quotationButton = ValueKey("quotationButton");
+
+  /// 貼吧按鈕
+  static const ValueKey<String> forumButton = ValueKey("forumButton");
+
+  /// 行情第一筆元件
+  static const ValueKey<String> quotationFirstButton = ValueKey("quotationFirst");
+
+
+  /// ################## 下列請依照需求修改 ##########################
+  
+  /// 首頁按鈕文字
+  static const String homeText = "";
+
+  /// 新聞按鈕文字
+  static const String newsText = "";
+
+  /// 行情按鈕文字
+  static const String quotationText = "行情";
+
+  /// 貼吧按鈕文字
+  static const String forumText = "貼吧";
+
+  /// 行情第一筆文字
+  static const String quotationFirstText = "";
+}
